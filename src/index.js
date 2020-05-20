@@ -18,10 +18,6 @@ class FirstComponent extends React.Component {
 }
 
 class FirstPureComponent extends React.PureComponent {
-    constructor(...props) {
-        super(...props);
-    }
-
     render() {
         return (
             <h2>
