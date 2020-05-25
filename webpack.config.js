@@ -5,7 +5,7 @@ const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
     mode: isDev ? 'development' : 'production',
-    entry: "./src/index.js",
+    entry: "./src/index.jsx",
     output: {
         path: path.join(__dirname, "/dist"),
         filename: "bundle.js"
@@ -21,8 +21,12 @@ module.exports = {
                 },
             },
             {
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"]
+                test: /\.scss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+            {
+                test: /\.(png|svg|jpg|gif|ttf)$/,
+                use: ['file-loader'],
             }
         ]
     },

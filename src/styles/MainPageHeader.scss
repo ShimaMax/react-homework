@@ -1,0 +1,23 @@
+.main-page-header {
+  padding: 15px 0;
+
+  background-image: url('../assets/images/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .logotype {
+    color: #F65261;
+    font-size: 20px;
+
+    .bold {
+      font-family: 'Montserrat-Black', sans-serif;
+    }
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+}
