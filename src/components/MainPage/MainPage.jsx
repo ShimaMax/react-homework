@@ -3,6 +3,7 @@ import React from 'react';
 import '../../styles/MainPage.scss';
 import MainPageHeader from './MainPageHeader.jsx';
 import CardsContainer from '../CardsContainer.jsx';
+import Footer from '../Footer.jsx';
 import {Col, Container, Row} from "react-bootstrap";
 import Toggler from "../Toggler.jsx";
 
@@ -42,6 +43,7 @@ class MainPage extends React.Component {
                     <div className="delimiter-2"></div>
                 </Container>
                 <CardsContainer filter={this.state.filter} sortType={this.state.sortType} />
+                <Footer />
             </div>
         );
     }

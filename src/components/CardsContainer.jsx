@@ -27,6 +27,8 @@ class CardsContainer extends React.Component {
                movie[this.combinedGenreSymbol] = movie.genres.join(' ');
             });
 
+            // console.log(allMovies);
+
             this.setState({
                 allMovies
             });
@@ -60,6 +62,11 @@ class CardsContainer extends React.Component {
                             />
                         </Col>;
                     })}
+                    {!movies.length ?
+                        (<div className="empty-movies">
+                            <div>No Films Found</div>
+                        </div>)
+                        : null}
                 </Row>
             </Container>
         </div>;

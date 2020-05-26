@@ -1,0 +1,75 @@
+.movie-description {
+  background-image: url('../assets/images/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .dark-wrapper {
+    background: rgba(#000, 0.7);
+    height: 100%;
+    padding: 15px 0;
+    color: rgba(#fff, 0.8);
+
+    .search-button {
+      font-size: 12px;
+      border: none;
+      background: #F65261;
+      color: #fff;
+      border-radius: 4px;
+      padding: 2px 7px;
+      text-transform: uppercase;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .poster-container {
+      padding-left: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .header {
+
+      .title {
+        font-size: 36px;
+      }
+
+      .rating {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        font-size: 26px;
+        color: #a1e66f;
+        font-family: "Montserrat-Light", sans-serif;
+        display: inline-block;
+        padding: 10px;
+        border: 1px solid rgba(#fff, 0.8);
+        border-radius: 50%;
+        margin-left: 15px;
+      }
+    }
+
+    .label {
+      font-size: 16px;
+    }
+
+    .film-meta {
+      display: flex;
+      font-family: "Montserrat-Light", sans-serif;
+
+      .meta-item {
+        font-size: 26px;
+        color: #F65261;
+        margin-right: 20px;
+
+        .small {
+          font-size: 16px;
+          color: rgba(#fff, 0.6);
+        }
+      }
+    }
+  }
+}

@@ -23,7 +23,7 @@ class Toggler extends React.Component {
 
     render() {
         return (
-            <Row>
+            <Row className='toggler'>
                 <Col xs="auto" className="title">{this.props.title}</Col>
                 <Col xs="auto" className="buttons">
                     {this.props.tabs.map((value, index) => {
