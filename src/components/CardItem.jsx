@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/CardItem.scss';
+import '../styles/CardItem.scss';
 
 class CardItem extends React.PureComponent {
     render() {

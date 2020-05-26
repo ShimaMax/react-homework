@@ -1,11 +1,10 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import '../../styles/MainPageContent.scss';
-import Toggler from '../Toggler.jsx';
+import '../styles/CardsContainer.scss';
 import CardItem from './CardItem.jsx';
 
-class MainPageContent extends React.Component {
+class CardsContainer extends React.Component {
     constructor(props) {
         super(props);
 
@@ -14,8 +13,7 @@ class MainPageContent extends React.Component {
         this.combinedGenreSymbol = Symbol('combined genre');
 
         this.state = {
-            allMovies: [],
-            sortType: 0
+            allMovies: []
         };
     }
 
@@ -39,17 +37,11 @@ class MainPageContent extends React.Component {
 
     getFilteredMovies() {
         const filterField = ['title', this.combinedGenreSymbol][this.props.filter.type];
-        const sortField = [this.releaseTimestampSymbol, 'vote_count'][this.state.sortType];
+        const sortField = [this.releaseTimestampSymbol, 'vote_count'][this.props.sortType];
 
         return this.state.allMovies
             .filter(movie => movie[filterField].toLowerCase().includes(this.props.filter.string.toLowerCase()))
             .sort((a, b) => b[sortField] - a[sortField]);
-    }
-
-    changeSortType(id) {
-        this.setState({
-            sortType: id
-        });
     }
 
     render() {
@@ -57,13 +49,6 @@ class MainPageContent extends React.Component {
 
         return <div className="main-page-content">
             <Container>
-                <div className="delimiter-2"></div>
-                <Row className="justify-content-end">
-                    <Col xs="auto">
-                        <Toggler title="Sort by" tabs={['Release date', 'Rating']} onChange={this.changeSortType.bind(this)} />
-                    </Col>
-                </Row>
-                <div className="delimiter-2"></div>
                 <Row className="cards-container">
                     {movies.map((value, index) => {
                         return <Col key={value.id} xs="12" md="6" lg="4" className="card-item-wrapper">
@@ -81,4 +66,4 @@ class MainPageContent extends React.Component {
     }
 }
 
-export default MainPageContent;
+export default CardsContainer;
