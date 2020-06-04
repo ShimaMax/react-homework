@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/CardItem.scss';
+import './style.scss';
 
 export default function CardItem({title, ganre, posterUrl, year}) {
     return (

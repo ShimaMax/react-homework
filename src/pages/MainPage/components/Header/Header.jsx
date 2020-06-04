@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import '../../styles/MainPageHeader.scss';
-import Search from "../Search.jsx";
+import './style.scss';
+import Search from "../../../../components/Search/Search.jsx";
 
-export default function MainPageHeader({onSearch}) {
+export default function Header({onSearch}) {
     return (
         <div className="main-page-header">
             <Container>

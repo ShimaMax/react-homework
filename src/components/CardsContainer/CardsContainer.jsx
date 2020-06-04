@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import '../styles/CardsContainer.scss';
-import CardItem from './CardItem.jsx';
+import './style.scss';
+import CardItem from '../CardItem/CardItem.jsx';
 
 class CardsContainer extends React.Component {
     constructor(props) {

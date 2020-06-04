@@ -1,8 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
-import '../styles/Search.scss';
-import Toggler from './Toggler.jsx';
+import './style.scss';
+import Toggler from '../Toggler/Toggler.jsx';
 
 class Search extends React.Component {
     constructor(props) {

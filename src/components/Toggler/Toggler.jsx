@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
-import '../styles/Toggler.scss';
+import './style.scss';
 
 class Toggler extends React.Component {
     constructor(props) {

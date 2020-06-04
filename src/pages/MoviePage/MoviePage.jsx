@@ -1,10 +1,10 @@
 import React from 'react';
-
-import '../../styles/MoviePage.scss';
-import CardsContainer from '../CardsContainer.jsx';
-import Footer from '../Footer.jsx';
 import {Col, Container, Row} from "react-bootstrap";
-import MovieDescription from "./MovieDescription.jsx";
+
+import './style.scss';
+import CardsContainer from '../../components/CardsContainer/CardsContainer.jsx';
+import Footer from '../../components/Footer/Footer.jsx';
+import MovieDescription from "./components/MovieDescription/MovieDescription.jsx";
 
 class MainPage extends React.Component {
     constructor(props) {

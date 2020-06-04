@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/MovieDescription.scss';
+import './style.scss';
 import {Col, Container, Row} from "react-bootstrap";
 
 export default function MovieDescription({movieInfo}) {

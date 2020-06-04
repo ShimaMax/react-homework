@@ -1,11 +1,11 @@
 import React from 'react';
-
-import '../../styles/MainPage.scss';
-import MainPageHeader from './MainPageHeader.jsx';
-import CardsContainer from '../CardsContainer.jsx';
-import Footer from '../Footer.jsx';
 import {Col, Container, Row} from "react-bootstrap";
-import Toggler from "../Toggler.jsx";
+
+import './style.scss';
+import Header from './components/Header/Header.jsx';
+import CardsContainer from '../../components/CardsContainer/CardsContainer.jsx';
+import Footer from '../../components/Footer/Footer.jsx';
+import Toggler from "../../components/Toggler/Toggler.jsx";
 
 class MainPage extends React.Component {
     constructor(props) {
@@ -32,7 +32,7 @@ class MainPage extends React.Component {
     render() {
         return (
             <div className="main-page">
-                <MainPageHeader onSearch={this.onSearch.bind(this)} />
+                <Header onSearch={this.onSearch.bind(this)} />
                 <Container>
                     <div className="delimiter-2" />
                     <Row className="justify-content-end">
