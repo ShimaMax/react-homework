@@ -30,22 +30,24 @@ class Search extends React.Component {
     }
 
     render() {
-        return <React.Fragment>
-            <Row>
-                <Col xs={8}>
-                    <input type="text" placeholder="Search" value={this.state.searchString} onChange={this.handleInputChange.bind(this)} />
-                </Col>
-                <Col xs={4}>
-                    <button onClick={this.onSearch.bind(this)}>Search</button>
-                </Col>
-            </Row>
-            <div className="delimiter-2"></div>
-            <Row>
-                <Col>
-                    <Toggler title="Search by" tabs={['Title', 'Genre']} onChange={this.onChangeType.bind(this)} />
-                </Col>
-            </Row>
-        </React.Fragment>;
+        return (
+            <React.Fragment>
+                <Row>
+                    <Col xs={8}>
+                        <input type="text" placeholder="Search" value={this.state.searchString} onChange={this.handleInputChange.bind(this)} />
+                    </Col>
+                    <Col xs={4}>
+                        <button onClick={this.onSearch.bind(this)}>Search</button>
+                    </Col>
+                </Row>
+                <div className="delimiter-2" />
+                <Row>
+                    <Col>
+                        <Toggler title="Search by" tabs={['Title', 'Genre']} onChange={this.onChangeType.bind(this)} />
+                    </Col>
+                </Row>
+            </React.Fragment>
+        );
     }
 }
 

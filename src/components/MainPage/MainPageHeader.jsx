@@ -4,27 +4,25 @@ import { Container, Row, Col } from 'react-bootstrap';
 import '../../styles/MainPageHeader.scss';
 import Search from "../Search.jsx";
 
-class MainPageHeader extends React.Component {
-    render() {
-        return <div className="main-page-header">
+export default function MainPageHeader({onSearch}) {
+    return (
+        <div className="main-page-header">
             <Container>
                 <Row>
                     <span className="logotype">
                         <span className="bold">netflix</span>roulette
                     </span>
                 </Row>
-                <div className="delimiter-6"></div>
+                <div className="delimiter-6" />
                 <Row>
                     <Col md={{span: 10, offset: 1}}>
                         <h1>Find your movie</h1>
-                        <div className="delimiter-2"></div>
-                        <Search onSearch={this.props.onSearch.bind(this)} />
+                        <div className="delimiter-2" />
+                        <Search onSearch={onSearch.bind(this)} />
                     </Col>
                 </Row>
-                <div className="delimiter-10"></div>
+                <div className="delimiter-10" />
             </Container>
-        </div>;
-    }
-}
-
-export default MainPageHeader;
+        </div>
+    );
+};

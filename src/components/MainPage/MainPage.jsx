@@ -34,13 +34,13 @@ class MainPage extends React.Component {
             <div className="main-page">
                 <MainPageHeader onSearch={this.onSearch.bind(this)} />
                 <Container>
-                    <div className="delimiter-2"></div>
+                    <div className="delimiter-2" />
                     <Row className="justify-content-end">
                         <Col xs="auto">
                             <Toggler title="Sort by" tabs={['Release date', 'Rating']} onChange={this.onSortTypeChange.bind(this)} />
                         </Col>
                     </Row>
-                    <div className="delimiter-2"></div>
+                    <div className="delimiter-2" />
                 </Container>
                 <CardsContainer filter={this.state.filter} sortType={this.state.sortType} />
                 <Footer />

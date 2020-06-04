@@ -18,23 +18,11 @@ class CardsContainer extends React.Component {
     }
 
     async componentDidMount() {
-        try {
-            const allMovies = (await fetch('https://reactjs-cdp.herokuapp.com/movies')
-                .then(res => res.json())).data;
+        await this.updateFilms();
+    }
 
-            allMovies.forEach(movie => {
-               movie[this.releaseTimestampSymbol] = +new Date(movie.release_date);
-               movie[this.combinedGenreSymbol] = movie.genres.join(' ');
-            });
-
-            // console.log(allMovies);
-
-            this.setState({
-                allMovies
-            });
-        } catch (e) {
-            console.error(e);
-        }
+    async componentDidUpdate() {
+        await this.updateFilms();
     }
 
     getFilteredMovies() {
@@ -49,27 +37,49 @@ class CardsContainer extends React.Component {
     render() {
         const movies = this.getFilteredMovies();
 
-        return <div className="main-page-content">
-            <Container>
-                <Row className="cards-container">
-                    {movies.map((value, index) => {
-                        return <Col key={value.id} xs="12" md="6" lg="4" className="card-item-wrapper">
-                            <CardItem
-                                posterUrl={value.poster_path}
-                                title={value.title}
-                                ganre={value.genres.join(' & ')}
-                                year={value.release_date.split('-')[0]}
-                            />
-                        </Col>;
-                    })}
-                    {!movies.length ?
-                        (<div className="empty-movies">
-                            <div>No Films Found</div>
-                        </div>)
-                        : null}
-                </Row>
-            </Container>
-        </div>;
+        return (
+            <div className="main-page-content">
+                <Container>
+                    <Row className="cards-container">
+                        {movies.map((value, index) => {
+                            return <Col key={value.id} xs="12" md="6" lg="4" className="card-item-wrapper">
+                                <CardItem
+                                    posterUrl={value.poster_path}
+                                    title={value.title}
+                                    ganre={value.genres.join(' & ')}
+                                    year={value.release_date.split('-')[0]}
+                                />
+                            </Col>;
+                        })}
+                        {!movies.length ?
+                            (<div className="empty-movies">
+                                <div>No Films Found</div>
+                            </div>)
+                            : null}
+                    </Row>
+                </Container>
+            </div>
+        );
+    }
+
+    async updateFilms() {
+        try {
+            const res = await fetch('https://reactjs-cdp.herokuapp.com/movies');
+            const allMovies = (await res.json()).data;
+
+            allMovies.forEach(movie => {
+                movie[this.releaseTimestampSymbol] = +new Date(movie.release_date);
+                movie[this.combinedGenreSymbol] = movie.genres.join(' ');
+            });
+
+            // console.log(allMovies);
+
+            this.setState({
+                allMovies
+            });
+        } catch (e) {
+            console.error(e);
+        }
     }
 }
 

@@ -2,22 +2,21 @@ import React from 'react';
 
 import '../styles/CardItem.scss';
 
-class CardItem extends React.PureComponent {
-    render() {
-        return <div className="card-item">
-            <img src={this.props.posterUrl} />
-            <div className="delimiter-1"></div>
+export default function CardItem({title, ganre, posterUrl, year}) {
+    return (
+        <div className="card-item">
+            <img src={posterUrl} />
+            <div className="delimiter-1" />
             <div className="description">
                 <div className="left">
-                    <h2>{this.props.title}</h2>
-                    <p>{this.props.ganre}</p>
+                    <h2>{title}</h2>
+                    <p>{ganre}</p>
                 </div>
                 <div className="right">
-                    <div className="year">{this.props.year}</div>
+                    <div className="year">{year}</div>
                 </div>
             </div>
-        </div>;
-    }
-}
+        </div>
+    );
+};
 
-export default CardItem;

@@ -5,13 +5,11 @@ import MainPage from './MainPage/MainPage.jsx';
 import MoviePage from './MoviePage/MoviePage.jsx';
 import ErrorBoundary from "./ErrorBoundary.jsx";
 
-class App extends React.Component {
-    render() {
-        return <ErrorBoundary>
+export default function App() {
+    return (
+        <ErrorBoundary>
             <MainPage />
             {/*<MoviePage />*/}
-        </ErrorBoundary>;
-    }
-}
-
-export default App;
+        </ErrorBoundary>
+    );
+};
