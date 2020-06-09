@@ -21,10 +21,6 @@ class CardsContainer extends React.Component {
         await this.updateFilms();
     }
 
-    async componentDidUpdate() {
-        await this.updateFilms();
-    }
-
     getFilteredMovies() {
         const filterField = ['title', this.combinedGenreSymbol][this.props.filter.type];
         const sortField = [this.releaseTimestampSymbol, 'vote_count'][this.props.sortType];
