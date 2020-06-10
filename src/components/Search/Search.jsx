@@ -34,16 +34,16 @@ class Search extends React.Component {
             <React.Fragment>
                 <Row>
                     <Col xs={8}>
-                        <input type="text" placeholder="Search" value={this.state.searchString} onChange={this.handleInputChange.bind(this)} />
+                        <input id="test_search_input" type="text" placeholder="Search" value={this.state.searchString} onChange={this.handleInputChange.bind(this)} />
                     </Col>
                     <Col xs={4}>
-                        <button onClick={this.onSearch.bind(this)}>Search</button>
+                        <button id="test_search_button" onClick={this.onSearch.bind(this)}>Search</button>
                     </Col>
                 </Row>
                 <div className="delimiter-2" />
                 <Row>
                     <Col>
-                        <Toggler title="Search by" tabs={['Title', 'Genre']} onChange={this.onChangeType.bind(this)} />
+                        <Toggler id="test_search_toggler" title="Search by" tabs={['Title', 'Genre']} onChange={this.onChangeType.bind(this)} />
                     </Col>
                 </Row>
             </React.Fragment>

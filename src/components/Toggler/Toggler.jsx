@@ -28,6 +28,7 @@ class Toggler extends React.Component {
                 <Col xs="auto" className="buttons">
                     {this.props.tabs.map((value, index) => {
                         return <div
+                            id={`test_toggler_tab_${index}`}
                             key={index}
                             className={`${this.state.activeTab === index ? 'active' : ''}`}
                             onClick={_ => this.toggleTab(index)}>
