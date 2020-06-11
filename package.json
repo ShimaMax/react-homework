@@ -6,7 +6,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
-    "test": "jest \".*\\.test\\.js$\"",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "cypress": "cypress open"
   },
   "author": "",
@@ -46,8 +47,15 @@
     "webpack-dev-server": "^3.11.0"
   },
   "jest": {
+    "testRegex": ".*\\.test.js$",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/**/*.test.js"
+    ],
     "moduleNameMapper": {
-      "\\.(css|scss|spec\\.js)$": "identity-obj-proxy"
+      "\\.(css|scss)$": "identity-obj-proxy"
     }
   }
 }
