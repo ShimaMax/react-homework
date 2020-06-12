@@ -18,7 +18,7 @@ export default function Header({onSearch}) {
                     <Col md={{span: 10, offset: 1}}>
                         <h1>Find your movie</h1>
                         <div className="delimiter-2" />
-                        <Search onSearch={onSearch.bind(this)} />
+                        <Search id="test_header_search" onSearch={onSearch.bind(this)} />
                     </Col>
                 </Row>
                 <div className="delimiter-10" />

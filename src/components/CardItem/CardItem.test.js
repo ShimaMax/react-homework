@@ -1,14 +1,12 @@
 import React from 'react';
-import { configure, render } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import CardItem from './CardItem';
 import {describe, expect, it} from '@jest/globals';
-
-configure({ adapter: new Adapter() });
+import toJson from 'enzyme-to-json';
 
 describe('<CardItem />', () => {
     it('renders without crashing', () => {
-        const component = render(<CardItem />);
-        expect(component).toMatchSnapshot();
+        const component = shallow(<CardItem />);
+        expect(toJson(component)).toMatchSnapshot();
     });
 });

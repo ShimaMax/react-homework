@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainPage /> renders without crashing 1`] = `
+<div
+  className="main-page"
+>
+  <Header
+    onSearch={[Function]}
+  />
+  <Container
+    fluid={false}
+  >
+    <div
+      className="delimiter-2"
+    />
+    <Row
+      className="justify-content-end"
+      noGutters={false}
+    >
+      <Col
+        xs="auto"
+      >
+        <Toggler
+          onChange={[Function]}
+          tabs={
+            Array [
+              "Release date",
+              "Rating",
+            ]
+          }
+          title="Sort by"
+        />
+      </Col>
+    </Row>
+    <div
+      className="delimiter-2"
+    />
+  </Container>
+  <CardsContainer
+    filter={
+      Object {
+        "string": "",
+        "type": 0,
+      }
+    }
+    sortType={0}
+  />
+  <Footer />
+</div>
+`;

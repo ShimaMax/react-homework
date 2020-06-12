@@ -1,16 +1,13 @@
 import React from 'react';
-import { configure, render, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow, mount } from 'enzyme';
 import Toggler from './Toggler';
 import {describe, expect, it} from '@jest/globals';
-import Search from '../Search/Search';
-
-configure({ adapter: new Adapter() });
+import toJson from 'enzyme-to-json';
 
 describe('<Toggler />', () => {
     it('renders without crashing', () => {
-        const component = render(<Toggler title="test title" tabs={['tab1', 'tab2']} />);
-        expect(component).toMatchSnapshot();
+        const component = shallow(<Toggler title="test title" tabs={['tab1', 'tab2']} />);
+        expect(toJson(component)).toMatchSnapshot();
     });
 
     it('right tab index', () => {

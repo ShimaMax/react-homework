@@ -1,12 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import Footer from './Footer';
+import {shallow} from 'enzyme';
+import MainPage from './MainPage';
 import {describe, expect, it} from '@jest/globals';
 import toJson from 'enzyme-to-json';
 
-describe('<Footer />', () => {
+describe('<MainPage />', () => {
     it('renders without crashing', () => {
-        const component = shallow(<Footer />);
+        const component = shallow(<MainPage/>);
         expect(toJson(component)).toMatchSnapshot();
     });
 });

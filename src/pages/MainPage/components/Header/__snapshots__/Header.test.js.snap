@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders without crashing 1`] = `
+<div
+  className="main-page-header"
+>
+  <Container
+    fluid={false}
+  >
+    <Row
+      noGutters={false}
+    >
+      <span
+        className="logotype"
+      >
+        <span
+          className="bold"
+        >
+          netflix
+        </span>
+        roulette
+      </span>
+    </Row>
+    <div
+      className="delimiter-6"
+    />
+    <Row
+      noGutters={false}
+    >
+      <Col
+        md={
+          Object {
+            "offset": 1,
+            "span": 10,
+          }
+        }
+      >
+        <h1>
+          Find your movie
+        </h1>
+        <div
+          className="delimiter-2"
+        />
+        <Search
+          id="test_header_search"
+          onSearch={[Function]}
+        />
+      </Col>
+    </Row>
+    <div
+      className="delimiter-10"
+    />
+  </Container>
+</div>
+`;

@@ -1,15 +1,13 @@
 import React from 'react';
-import { configure, render, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow, mount } from 'enzyme';
 import Search from './Search';
 import {describe, expect, it} from '@jest/globals';
-
-configure({ adapter: new Adapter() });
+import toJson from 'enzyme-to-json';
 
 describe('<Search />', () => {
     it('renders without crashing', () => {
-        const component = render(<Search />);
-        expect(component).toMatchSnapshot();
+        const component = shallow(<Search />);
+        expect(toJson(component)).toMatchSnapshot();
     });
 
     it('generate right filter', () => {
