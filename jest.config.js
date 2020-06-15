@@ -4,7 +4,9 @@ module.exports = {
         "src/**/*.jsx"
     ],
     coveragePathIgnorePatterns: [
-        "cypress/"
+        "cypress/",
+        "src/index.jsx",
+        "src/components/ErrorBoundary/ErrorBoundary.jsx"
     ],
     moduleNameMapper: {
         "\\.(css|scss)$": "identity-obj-proxy"
